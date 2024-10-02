@@ -30,7 +30,9 @@ function render(variables = {}) {
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
   // reset the website body with the new html output
-  document.querySelector("#widget_content").innerHTML = `<div class="widget">
+  document.querySelector(
+    "#widget_content"
+  ).innerHTML = `<div class="widget" id="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${variables.name ? variables.name : "Julia"} ${
@@ -64,6 +66,13 @@ function render(variables = {}) {
           </ul>
         </div>
     `;
+  document.querySelector(
+    "#widget_content"
+  ).style = `background-color: ${variables.backgroundColor}`;
+
+  if (variables.darkMode) {
+    document.querySelector("#widget").classList.add("darkMode");
+  }
 }
 
 /**
@@ -88,7 +97,9 @@ window.onload = function() {
     lastName: null,
     role: null,
     country: null,
-    city: null
+    city: null,
+    backgroundColor: null,
+    darkMode: false
   };
   render(window.variables); // render the card for the first time
 

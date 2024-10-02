@@ -100,3 +100,16 @@
   border: none;
   border-radius: 0 0 3px 0;
 }
+
+.darkMode {
+  background-color: #1a1919;
+  color: #fff;
+}
+
+.darkMode h1 {
+  color: #f7f7f7;
+}
+
+.darkMode .photo {
+  border: 5px solid #1a1919;
+}
